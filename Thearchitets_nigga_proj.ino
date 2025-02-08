@@ -30,6 +30,8 @@ void setup()
 
 void change_dir_m1()
 {
+  state_m1 ^= 1;
+
   if(state_m1)
   {
     digitalWrite(M1P1, HIGH);
@@ -41,11 +43,12 @@ void change_dir_m1()
     digitalWrite(M1P2, HIGH);
   }
 
-  state_m1 ^= 1;
 }
 
 void change_dir_m2()
 {
+  state_m2 ^= 1;
+
   if(state_m2)
   {
     digitalWrite(M2P1, HIGH);
@@ -57,7 +60,6 @@ void change_dir_m2()
     digitalWrite(M2P2, HIGH);
   }
 
-  state_m2 ^= 1;
 }
 
 void forward_move(int _speed) // in one timpi
@@ -99,61 +101,35 @@ void right_move(int _speed) // in one timpi
 
 void loop() 
 {
-  Serial.write("Hello?\n");
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(50);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(50);
-
-
-  for(int i = 0;i < 500;i++)
-  {
-    forward_move(i);
-    delay(100);
-  }
-
-  for(int i = 500;i >= 0;i--)
-  {
-    forward_move(i);
-    delay(100);
-  }
-
-
-  for(int i = 0;i < 500;i++)
-  {
-    back_move(i);
-    delay(100);
-  }
-
-  for(int i = 500;i >= 0;i--)
-  {
-    back_move(i);
-    delay(100);
-  }
-
-
-  for(int i = 0;i < 500;i++)
-  {
-    left_move(i);
-    delay(100);
-  }
-
-  for(int i = 500;i >= 0;i--)
-  {
-    left_move(i);
-    delay(100);
-  }
-
-  for(int i = 0;i < 500;i++)
-  {
-    right_move(i);
-    delay(100);
-  }
-
-  for(int i = 500;i >= 0;i--)
-  {
-    right_move(i);
-    delay(100);
-  }
+//  Serial.write("Hello?\n");
+//  digitalWrite(LED_BUILTIN, HIGH);
+//  delay(50);
+//  digitalWrite(LED_BUILTIN, LOW);
+//  delay(50);
+//
+//
+//  int i = 1024;
+  forward_move(1023);
+//    delay(1000);
+//
+//    forward_move(i);
+//    delay(100);
+//
+//
+//    back_move(i);
+//    delay(100);
+//
+//    back_move(i);
+//    delay(100);
+//
+//
+//    left_move(i);
+//    delay(100);
+//    left_move(i);
+//    delay(100);
+//    right_move(i);
+//    delay(100);
+//    right_move(i);
+//    delay(100);
 
 }
